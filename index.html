@@ -3,8 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--FAVICON-->
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!--GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Roboto:wght@300&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONTAWESOME-ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Roboto:wght@100;300&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <!--STYLE CSS-->
     <link rel="stylesheet" href="style.css" />
-    <title>Word Analyitcs</title>
+    <title>Word Analytics</title>
   </head>
-  <body></body>
+  <body class="app">
+    <div class="main__container">
+      <h1><span class="">word</span> <span class="u-bold">analytics</span></h1>
+      <div class="analytics">
+        <textarea
+          class="analytics__area"
+          placeholder="Enter your text"
+        ></textarea>
+        <div class="analytics__features">
+          <div class="analytics__feature analytics__words">
+            <div class="analytic__word analytic__feature__count">
+              <span class="u-bolder">0</span>
+            </div>
+            <div class="analytic__word analytic__feature__text">words</div>
+          </div>
+          <div class="analytics__feature analytics__characters">
+            <div class="analytics__character analytics__character__count">
+              <span class="u-bolder">0</span>
+            </div>
+            <div class="analytics__character analytics__character__text">
+              characters
+            </div>
+          </div>
+          <div class="analytics__feature analytics__twitters">
+            <div class="analytics__twitter analytics__twitter__count">
+              <span class="u-bolder">280</span>
+            </div>
+            <div class="analytics__twitter analytics__twitter__text">
+              Twitter
+            </div>
+          </div>
+          <div class="analytics__feature analytics__facebooks">
+            <div class="analytics__facebook analytics__facebook__count">
+              <span class="u-bolder">2200</span>
+            </div>
+            <div class="analytics__facebook analytics__facebook__text">
+              Facebook
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <small class="copyright copyright__left"
+          >&copy;Danijel Klobučar 2023. All rights reserverd.</small
+        >
+        <small class="copyright copyright__right"
+          >&copy;Last checked limits: 17 days ago.</small
+        >
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

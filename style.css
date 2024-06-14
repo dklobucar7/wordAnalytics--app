@@ -1,0 +1,214 @@
+/* CSS RESET */ 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    background-color: initial;
+    color: initial;
+    font: initial; /* inherit all of fonts (font-family and font-size)*/   
+    outline: none; /*We remove ugly outline for TAB on keyboard for focus state*/
+}
+
+input {
+    font: inherit; /*we want to force all of the input fields to inherit all the styles related to the font*/
+    border:none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* UTILITY CLASS */
+.u-italic {
+    font-style: italic;
+}
+
+.u-accent {
+    
+}
+
+.u-underline {
+    text-decoration: underline;
+}
+
+.u-bold {
+    font-weight: 500;
+}
+
+.u-bolder {
+    font-weight: 1000;
+}
+
+
+
+/* BASE STYLES */
+/* body */ 
+.app {
+    
+    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color:#fff;
+    
+    background-image: linear-gradient(to right,  #622DB9, #18A0BE);
+
+    scrollbar-width: none; /*only for MS Edge and Firefox*/
+
+    &::-webkit-scrollbar { /*for Google Chrome to remove scroll bar*/
+        display: none;
+    }
+}
+
+.main__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    margin: 40px 0px;
+    font-size: 40px;
+    letter-spacing: 3px;
+    word-spacing: -10px;
+}
+
+.analytics {
+    height: 575px;
+    width: 1024px;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;    
+}
+
+/* ANALYTICS AREA*/
+.analytics__area{
+    flex: 0.6;
+    resize: none;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 14px;
+}
+
+.analytics__area:focus{
+    outline: none;
+}
+
+.analytics__area::placeholder {
+}
+
+
+/* ANALYTICS FEATURES*/
+.analytics__features{
+    flex:0.4;
+    background-color: rgb(233, 239, 240);
+    color:black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    
+}
+
+.analytics__feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    border: 1px solid #CDD3D4;
+}
+
+.analytics__words{
+
+}
+
+.analytic__word{
+
+}
+
+.analytic__feature__count{
+    font-size: 48px;
+}
+
+.analytic__feature__text{
+
+}
+
+
+.analytics__characters {
+    border-top-right-radius: 10px;
+}
+
+.analytics__character__count {
+    font-size: 48px;
+}
+
+.analytics__character__text{
+
+}
+
+.analytics__twitters{
+
+}
+.analytics__twitter__count{
+    font-size: 48px;
+
+}
+
+.analytics__twitter__text{
+
+}
+
+.analytics__facebooks{
+    border-bottom-right-radius: 10px;   
+}
+
+.analytics__facebook__count{
+    font-size: 48px;
+
+}
+.analytics__facebook__text{
+
+}
+
+/* FOOTER */
+
+.footer{
+    width: 1024px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright{
+
+}
+
+.copyright__left{
+
+}
+.copyright__right{
+
+}
