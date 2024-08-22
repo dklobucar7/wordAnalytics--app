@@ -1,32 +1,43 @@
-const textAreaEl = document.querySelector(".analytics__area");
-const textAreaTextEl = textAreaEl.textContent;
-const wordCountEl = document.querySelector(".analytic__feature__count");
-const charCountEl = document.querySelector(".analytics__character__count");
-const twitterCountEl = document.querySelector(".analytics__twitter__count");
-const faceCountEl = document.querySelector(".analytics__facebook__count");
+const textareaEl = document.querySelector(".textarea");
+const charactersNumberEl = document.querySelector(".stat__number--characters");
+const twitterNumberEl = document.querySelector(".stat__number--twitter");
+const facebookNumberEl = document.querySelector(".stat__number--facebook");
+const wordsNumberEl = document.querySelector(".stat__number--words");
 
-function updateCounts() {
-  const text = textAreaEl.value;
+const inputHandler = () => {
+  //example of input validation
+  if (textareaEl.value.includes("<script>")) {
+    alert("You can't use <script> in your text.");
+    textareaEl.value = textareaEl.value.replace("<script>", "");
+  }
 
-  // Update word count
-  const wordCount = text.trim().split(/\s+/).length;
-  wordCountEl.textContent = wordCount;
+  // determine new numbers
+  let numberOfWords = textareaEl.value.split(" ").length;
+  if (textareaEl.value.length === 0) {
+    numberOfWords = 0;
+  }
+  const numberOfCharacters = textareaEl.value.length;
+  const twitterCharactersLeft = 280 - numberOfCharacters;
+  const facebookCharactersLeft = 2200 - numberOfCharacters;
 
-  // Update character count
-  const charCount = text.length;
-  charCountEl.textContent = charCount;
+  // add visual indicator if limit is exceeded
+  if (twitterCharactersLeft < 0) {
+    twitterNumberEl.classList.add("counter--limit");
+  } else {
+    twitterNumberEl.classList.remove("counter--limit");
+  }
 
-  // Update Twitter count
-  const twitterCount = 280 - charCount;
-  twitterCountEl.textContent = twitterCount;
+  if (facebookCharactersLeft < 0) {
+    facebookNumberEl.classList.add("counter--limit");
+  } else {
+    facebookNumberEl.classList.remove("counter--limit");
+  }
 
-  // Update Facebook count
-  const faceCount = 2200 - charCount;
-  faceCountEl.textContent = faceCount;
-}
+  // set new numbers
+  wordsNumberEl.textContent = numberOfWords;
+  charactersNumberEl.textContent = numberOfCharacters;
+  twitterNumberEl.textContent = twitterCharactersLeft;
+  facebookNumberEl.textContent = facebookCharactersLeft;
+};
 
-// Listen for the input event on the textarea
-textAreaEl.addEventListener("input", updateCounts);
-
-// Initial update when the page loads
-updateCounts();
+textareaEl.addEventListener("input", inputHandler);
